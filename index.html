@@ -547,6 +547,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
+  // Personalización del H1 via parámetro URL ?h1=Texto&em=palabra
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    var titulo = params.get('h1');
+    var destacado = params.get('em');
+    if (titulo) {
+      var h1 = document.getElementById('hero-title');
+      if (destacado && titulo.includes(destacado)) {
+        h1.innerHTML = titulo.replace(destacado, '<em>' + destacado + '</em>');
+      } else {
+        h1.textContent = titulo;
+      }
+    }
+  })();
+
   document.querySelectorAll('.faq-question').forEach(function(btn) {
     btn.addEventListener('click', function() {
       var item = this.closest('.faq-item');
