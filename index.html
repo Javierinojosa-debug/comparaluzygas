@@ -117,10 +117,25 @@
     }
     .hero h1 em { font-style: normal; color: var(--cta); }
 
-    .hero-sub {
-      font-size: 1.05rem; color: rgba(255,255,255,.82);
-      margin-bottom: 32px; max-width: 480px; margin-left: auto; margin-right: auto;
+    .hero-bullets {
+      list-style: none; margin: 0 auto 32px; max-width: 420px; text-align: left;
+      display: flex; flex-direction: column; gap: 8px;
     }
+    .hero-bullets li {
+      display: flex; align-items: center; gap: 10px;
+      font-size: .97rem; color: rgba(255,255,255,.88);
+    }
+    .hero-bullets li::before {
+      content: ''; flex-shrink: 0; width: 7px; height: 7px;
+      background: var(--cta); border-radius: 50%;
+    }
+
+    /* ── BRANDS CAROUSEL ── */
+    .brands { background: var(--white); padding: 20px 0; overflow: hidden; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .brands-track { display: flex; gap: 16px; animation: marquee 22s linear infinite; width: max-content; }
+    .brands:hover .brands-track { animation-play-state: paused; }
+    .brand-item { display: flex; align-items: center; padding: 8px 20px; background: var(--bg); border: 1.5px solid var(--border); border-radius: var(--radius); font-weight: 700; font-size: .88rem; color: var(--navy-dk); white-space: nowrap; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
     .cta-primary {
       display: flex; align-items: center; justify-content: center; gap: 12px;
@@ -295,8 +310,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><circle cx="6" cy="6" r="6"/></svg>
       Asesoramiento 100% gratuito
     </p>
-    <h1 id="hero-title">¿Estás pagando <em>de más</em><br>en luz y gas?</h1>
-    <p class="hero-sub">Te ayudamos a encontrar la mejor tarifa de luz y gas. Sin papeleos. Sin compromiso.</p>
+    <h1 id="hero-title">Teléfono <em>gratuito</em> para gestionar tu factura de luz y gas</h1>
+    <ul class="hero-bullets">
+      <li>Cambio de tarifa o comercializadora</li>
+      <li>Reducción de potencia contratada</li>
+      <li>Alta o baja del suministro</li>
+      <li>Reclamaciones en la factura</li>
+      <li>Gestión del bono social</li>
+      <li>Problemas con el contador</li>
+    </ul>
     <a href="tel:+34910769613" class="cta-primary" aria-label="Llamar ahora al 910 769 613">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
       910 769 613
@@ -309,6 +331,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <hr class="divider divider--onblue" aria-hidden="true">
+
+<!-- ══ CARRUSEL COMPAÑÍAS ══ -->
+<div class="brands" aria-hidden="true">
+  <div class="brands-track">
+    <span class="brand-item">Endesa</span>
+    <span class="brand-item">Repsol</span>
+    <span class="brand-item">TotalEnergies</span>
+    <span class="brand-item">Naturgy</span>
+    <span class="brand-item">Iberdrola</span>
+    <span class="brand-item">Pepe Energy</span>
+    <span class="brand-item">Octopus</span>
+    <span class="brand-item">Plenitude</span>
+    <span class="brand-item">Endesa</span>
+    <span class="brand-item">Repsol</span>
+    <span class="brand-item">TotalEnergies</span>
+    <span class="brand-item">Naturgy</span>
+    <span class="brand-item">Iberdrola</span>
+    <span class="brand-item">Pepe Energy</span>
+    <span class="brand-item">Octopus</span>
+    <span class="brand-item">Plenitude</span>
+  </div>
+</div>
 
 <!-- ══ CÓMO FUNCIONA ══ -->
 <section class="how" aria-labelledby="how-title">
