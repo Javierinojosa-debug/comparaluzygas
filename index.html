@@ -135,8 +135,7 @@
     .brands-track { display: flex; gap: 16px; animation: marquee 22s linear infinite; width: max-content; }
     .brands:hover .brands-track { animation-play-state: paused; }
     .brand-item { display: flex; align-items: center; justify-content: center; padding: 8px 24px; background: var(--white); }
-    .brand-item img { height: 36px; width: auto; object-fit: contain; filter: grayscale(100%); opacity: .6; transition: filter .2s, opacity .2s; }
-    .brand-item img:hover { filter: grayscale(0%); opacity: 1; }
+    .brand-item img { height: 36px; width: auto; object-fit: contain; }
     @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
     .cta-primary {
